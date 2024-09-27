@@ -4,10 +4,10 @@ import 'preline/preline';
 import { IStaticMethods } from 'preline/preline';
 import { useLocation } from 'react-router-dom';
 import ThemeProvider from '@/providers/theme';
-import Meta from '@/components/common/meta';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import ScrollToTop from '@/components/common/scroll-to-top';
+import { Meta } from '@/components';
 
 declare global {
   interface Window {

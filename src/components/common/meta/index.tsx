@@ -1,16 +1,15 @@
-import { Helmet } from "react-helmet";
-import { metadata } from "../../../config/metadata";
+import { Helmet } from 'react-helmet-async';
+import { metadata } from '../../../config/metadata';
 
 export default function Meta() {
-  const { applicationName, description, keywords, referrer, robots, title } =
-    metadata;
+  const { applicationName, description, keywords, referrer, robots, title } = metadata;
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="application-name" content={applicationName} />
       <meta name="referrer" content={referrer} />
-      <meta name="keywords" content={keywords.join(", ")} />
+      <meta name="keywords" content={keywords.join(', ')} />
       <meta name="robots" content={JSON.stringify(robots)} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
