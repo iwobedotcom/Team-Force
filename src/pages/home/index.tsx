@@ -1,10 +1,7 @@
-import { ThemeToggle } from '@/components';
-
 export default function HomePage() {
   return (
-    <div>
-      HomePage
-      <ThemeToggle />
-    </div>
+    <h1 className="text-4xl font-neue font-extrabold">
+      Yupidatat et eiusmod pariatur ut deserunt ea enim.
+    </h1>
   );
 }
