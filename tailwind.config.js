@@ -4,8 +4,13 @@ export default {
   darkMode: 'class',
   theme: {
     container: {
-      center: true,
-      padding: '1rem'
+      padding: {
+        DEFAULT: '1rem',
+        sm: '3rem',
+        lg: '6rem',
+        xl: '8rem',
+        '2xl': '10rem'
+      }
     },
     screens: {
       xs: '480px',
@@ -16,6 +21,9 @@ export default {
       '2xl': '1536px'
     },
     extend: {
+      backgroundImage: {
+        gradient: 'linear-gradient(90deg, rgba(102, 36, 209, 1) 0%, rgba(121, 59, 221, 1) 100%)'
+      },
       fontFamily: {
         neue: ['"Uni Neue"', 'sans-serif'],
         sans: ['"Open Sans"', 'sans-serif']
@@ -24,11 +32,11 @@ export default {
         current: 'currentColor',
         transparent: 'transparent',
         white: '#ffffff',
-        black: '#000000',
+        black: '#000229',
         dark: '#1a1a1a',
         primary: '#6624d1',
-        'body-color': '#ffffff',
-        'body-color-dark': '#f5f5f8'
+        'body-color': '#788293',
+        'body-color-dark': '#959CB1'
       },
       boxShadow: {
         DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',

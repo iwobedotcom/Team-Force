@@ -1,5 +1,4 @@
-import { ReactElement, ReactNode, useEffect } from 'react';
-
+import React, { ReactElement, ReactNode, useEffect } from 'react';
 import 'preline/preline';
 import { IStaticMethods } from 'preline/preline';
 import { useLocation } from 'react-router-dom';
@@ -25,13 +24,16 @@ export default function Layout({ children }: LayoutProps): ReactElement {
   useEffect(() => {
     window.HSStaticMethods.autoInit();
   }, [location.pathname]);
+
   return (
     <ThemeProvider>
       <Meta />
-      <div className="min-h-screen bg-body-color dark:bg-black">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <div className="flex flex-col h-screen overflow-hidden bg-body-color dark:bg-black">
+        {/* <Header /> */}
+        <div className="flex-grow overflow-y-scroll snap-y snap-mandatory">
+          {children}
+          <Footer />
+        </div>
         <ScrollToTop />
       </div>
     </ThemeProvider>
