@@ -1,16 +1,23 @@
 import { CustomSectionProps } from '@/types';
 
-const CustomSection = ({ children, id, className = '', container = true }: CustomSectionProps) => {
+const CustomSection = ({ children, id, className, container = true }: CustomSectionProps) => {
   return (
-    <section
+    /*  <section
       id={id}
       className={`
       h-screen pt-8 pb-24 flex 
       snap-start snap-always
       ${className}
     `}
+    > */
+    <section
+      id={id}
+      className={`
+      pt-8 pb-24 
+      ${className}
+    `}
     >
-      <div className={container ? 'container mx-auto px-4' : ''}>{children}</div>
+      <div className={container ? 'container' : ''}>{children}</div>
     </section>
   );
 };

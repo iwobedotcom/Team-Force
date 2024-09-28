@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 export type MetadataProps = {
   title: string;
   description: string;
@@ -23,8 +23,9 @@ export type MetadataProps = {
 export type ButtonLinkProps = {
   to: string;
   label: string;
-  className?: string;
+  variant?: 'button' | 'link';
   size?: 'small' | 'medium' | 'large';
+  icon?: ReactElement | null;
 };
 
 export type CustomHeadingProps = {
@@ -34,8 +35,31 @@ export type CustomHeadingProps = {
   center?: boolean;
 };
 
-export type CustomSectionProps<T = unknown> = PropsWithChildren<T> & {
+export type CustomSectionProps = PropsWithChildren<{
   id: string;
   container?: boolean;
   className?: string;
+}>;
+
+export type OfferingProps = {
+  id?: number;
+  title: string;
+  description: string;
+  mockup: string;
+  link?: string;
+  bgColor?: string;
+  height?: string;
+};
+
+export type StatsProps = {
+  id: number;
+  sum: string;
+  label: string;
+};
+
+export type ServsProps = {
+  id: number;
+  icon: string;
+  title: string;
+  bgColor: string;
 };

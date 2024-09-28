@@ -8,14 +8,16 @@ const CustomHeading = ({ title, size, paragraph, center = true }: CustomHeadingP
   };
 
   return (
-    <div className={`relative left-0 top-0 w-full ${center ? 'text-center' : ''}`}>
+    <div
+      className={`relative flex flex-col left-0 top-0 w-full ${center ? 'justify-center items-center' : 'justify-start items-start'}`}
+    >
       <h1 className={`mb-4 font-bold text-black font-neue ${sizeClasses[size]}`}>
         {title}
         <span className="text-primary">.</span>
       </h1>
       {paragraph && (
         <p
-          className={`mx-auto mb-4 max-w-3xl text-md font-medium leading-relaxed text-bsm:text-lg text-body-color sm:leading-relaxed ${center ? 'text-center' : ''}`}
+          className={`mb-4 max-w-3xl text-md font-medium leading-relaxed sm:text-base text-body-color sm:leading-relaxed `}
         >
           {paragraph}
         </p>

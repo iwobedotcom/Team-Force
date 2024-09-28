@@ -28,12 +28,13 @@ export default function Layout({ children }: LayoutProps): ReactElement {
   return (
     <ThemeProvider>
       <Meta />
-      <div className="flex flex-col h-screen overflow-hidden bg-body-color dark:bg-black">
+      {/*   <div className="flex flex-col h-screen overflow-hidden bg-body-color dark:bg-black"> */}
+      <div className="flex flex-col bg-body-color">
         {/* <Header /> */}
-        <div className="flex-grow overflow-y-scroll snap-y snap-mandatory">
-          {children}
-          <Footer />
-        </div>
+        {/*  <div className="flex-grow overflow-y-scroll snap-y snap-mandatory"> */}
+        {children}
+        <Footer />
+        {/* </div> */}
         <ScrollToTop />
       </div>
     </ThemeProvider>

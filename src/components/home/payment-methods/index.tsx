@@ -4,7 +4,7 @@ import offImage from '@/assets/images/offerings.png';
 
 const PaymentMethods = () => {
   return (
-    <CustomSection id="payment-methods" className="bg-white">
+    <CustomSection id="payment-methods" className="bg-white" container={false}>
       <CustomHeading
         title="All major payment methods"
         paragraph="We've got all your payments covered"
