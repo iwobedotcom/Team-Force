@@ -46,20 +46,41 @@ const Header = () => {
                 to="/"
                 className={`header-logo block w-full ${sticky ? 'py-5 lg:py-2' : 'py-5'} `}
               >
-                <img
-                  src="/images/vite.svg"
-                  alt="logo"
-                  className="dark:hidden"
-                  width={50}
-                  height={50}
-                />
-                <img
-                  src="/images/vite.svg"
-                  alt="logo"
-                  className="hidden dark:block"
-                  width={50}
-                  height={50}
-                />
+                {sticky ? (
+                  <>
+                    <img
+                      src="/images/logo-alt.png"
+                      alt="logo"
+                      className="dark:hidden"
+                      width={100}
+                      height={100}
+                    />
+                    <img
+                      src="/images/logo-alt.png"
+                      alt="logo"
+                      className="hidden dark:block"
+                      width={100}
+                      height={100}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src="/images/logo.png"
+                      alt="logo"
+                      className="dark:hidden"
+                      width={100}
+                      height={100}
+                    />
+                    <img
+                      src="/images/logo.png"
+                      alt="logo"
+                      className="hidden dark:block"
+                      width={100}
+                      height={100}
+                    />
+                  </>
+                )}
               </Link>
             </div>
 
@@ -103,7 +124,9 @@ const Header = () => {
                           to={menuItem.path}
                           className={`flex py-2 md:text-md font-bold text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 font-neue ${
                             location.pathname === menuItem.path
-                              ? 'text-primary dark:text-white'
+                              ? sticky
+                                ? 'text-black/75'
+                                : 'text-white/75 dark:text-white'
                               : sticky
                                 ? 'text-black hover:text-primary dark:text-white/70 dark:hover:text-white'
                                 : 'text-white hover:text-primary dark:text-white/70 dark:hover:text-white'
@@ -133,7 +156,9 @@ const Header = () => {
                   variant="button"
                   color={sticky ? 'text-black' : 'text-white'}
                 />
-                <ThemeToggle />
+                <div className="ml-2">
+                  <ThemeToggle sticky={sticky} />
+                </div>
               </div>
             </div>
           </div>
