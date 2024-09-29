@@ -5,7 +5,7 @@ export { default as ScrollToTop } from './common/scroll-to-top';
 export { default as ScrollUp } from './common/scroll-up';
 export { default as Header } from './header';
 export { default as Footer } from './footer';
-export { default as ButtonLink } from './common/button-link';
+export { default as ButtonLink } from './common/buttons/button-link';
 export { default as Hero } from './home/hero';
 export { default as CustomHeading } from './common/custom-heading';
 export { default as CustomSection } from './common/custom-section';

@@ -31,6 +31,7 @@ export type ButtonLinkProps = {
 export type CustomHeadingProps = {
   title: string;
   size: 'small' | 'medium' | 'large';
+  className?: string;
   paragraph?: string;
   center?: boolean;
 };
@@ -62,4 +63,30 @@ export type ServsProps = {
   icon: string;
   title: string;
   bgColor: string;
+};
+
+export type FAQsProps = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+type FooterNavItem = {
+  id: number;
+  title: string;
+  link: string;
+};
+
+export type FooterNavLinksProps = {
+  heading: string;
+  menu: FooterNavItem[];
+};
+
+export type TestimonialsProps = {
+  id: number;
+  avatar: string;
+  name: string;
+  message: string;
+  title: string;
+  stars: number;
 };

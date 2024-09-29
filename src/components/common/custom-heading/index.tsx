@@ -1,6 +1,12 @@
 import { CustomHeadingProps } from '@/types';
 
-const CustomHeading = ({ title, size, paragraph, center = true }: CustomHeadingProps) => {
+const CustomHeading = ({
+  title,
+  size,
+  paragraph,
+  center = true,
+  className
+}: CustomHeadingProps) => {
   const sizeClasses = {
     small: 'text-xl sm:text-3xl',
     medium: 'text-2xl sm:text-4xl',
@@ -11,7 +17,7 @@ const CustomHeading = ({ title, size, paragraph, center = true }: CustomHeadingP
     <div
       className={`relative flex flex-col left-0 top-0 w-full ${center ? 'justify-center items-center' : 'justify-start items-start'}`}
     >
-      <h1 className={`mb-4 font-bold text-black font-neue ${sizeClasses[size]}`}>
+      <h1 className={`mb-4 font-bold font-neue ${sizeClasses[size]} ${className}`}>
         {title}
         <span className="text-primary">.</span>
       </h1>

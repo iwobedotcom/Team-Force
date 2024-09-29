@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { menuData } from './menuData';
 import ThemeToggle from '../common/theme-toggle';
-import ButtonLink from '../common/button-link';
+import ButtonLink from '../common/buttons/button-link';
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);

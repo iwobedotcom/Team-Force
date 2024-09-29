@@ -1,6 +1,5 @@
 import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
-import offImage from '@/assets/images/offerings.png';
 
 const PaymentMethods = () => {
   return (
@@ -10,13 +9,11 @@ const PaymentMethods = () => {
         paragraph="We've got all your payments covered"
         size="large"
       />
-      <div className="relative min-h-[35vh] rounded-xl md:min-h-[75vh]">
-        <img
-          src={offImage}
-          alt="offerings"
-          className="absolute inset-0 object-cover w-full h-full"
-        />
-      </div>
+      <img
+        src="/images/team-force-network.png"
+        alt="offerings"
+        className=" inset-0 object-cover w-full h-full"
+      />
     </CustomSection>
   );
 };
