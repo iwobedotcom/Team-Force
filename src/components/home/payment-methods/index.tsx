@@ -3,7 +3,12 @@ import CustomSection from '@/components/common/custom-section';
 
 const PaymentMethods = () => {
   return (
-    <CustomSection id="payment-methods" className="bg-white" container={false}>
+    <CustomSection
+      id="payment-methods"
+      className="bg-white pb-16"
+      container={false}
+      waveColor="#ffffff"
+    >
       <CustomHeading
         title="All major payment methods"
         paragraph="We've got all your payments covered"

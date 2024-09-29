@@ -2,7 +2,16 @@ import ButtonLink from '@/components/common/buttons/button-link';
 import { ArrowRightIcon } from '@/components/icons';
 import { OfferingProps } from '@/types';
 
-const OfferingCard = ({ title, description, mockup, bgColor, link, height }: OfferingProps) => {
+const OfferingCard = ({
+  title,
+  description,
+  mockup,
+  bgColor,
+  link,
+  height,
+  imageRes,
+  positioning
+}: OfferingProps) => {
   const heightClass = height || 'h-full';
 
   return (
@@ -11,7 +20,7 @@ const OfferingCard = ({ title, description, mockup, bgColor, link, height }: Off
     >
       <div className="p-3 md:p-12 flex flex-col h-full w-full z-10">
         <h3 className="text-2xl font-semibold text-black">{title}</h3>
-        <p className="mt-3 text-body-color text-sm flex-grow">{description}</p>
+        <p className="mt-3 text-body-color text-sm flex-grow w-[80%]">{description}</p>
         {link && (
           <div className="mt-auto pt-4">
             <ButtonLink
@@ -19,12 +28,13 @@ const OfferingCard = ({ title, description, mockup, bgColor, link, height }: Off
               to={link}
               size="small"
               variant="link"
-              icon={ArrowRightIcon}
+              icon={<ArrowRightIcon />}
+              color="text-black"
             />
           </div>
         )}
       </div>
-      <div className="absolute bottom-0 right-0 w-4/5 h-4/5 overflow-hidden flex items-end justify-end">
+      <div className={`absolute ${positioning} ${imageRes} overflow-hidden `}>
         <img src={mockup} alt={`${title} mockup`} className="object-contain w-full h-full" />
       </div>
     </div>

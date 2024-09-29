@@ -11,15 +11,15 @@ const stats: StatsProps[] = [
 ];
 
 const servs: ServsProps[] = [
-  { id: 1, icon: 'ph:globe-simple-duotone', title: 'Online', bgColor: 'bg-sky-200' },
+  { id: 1, icon: 'ph:globe-simple-duotone', title: 'Online', bgColor: 'bg-sky-300' },
   {
     id: 2,
     icon: 'solar:buildings-bold-duotone',
     title: 'Bank Transfers',
-    bgColor: 'bg-green-200'
+    bgColor: 'bg-green-300'
   },
-  { id: 3, icon: 'solar:keyboard-bold-duotone', title: 'Keyed', bgColor: 'bg-red-200' },
-  { id: 4, icon: 'ph:person-duotone', title: 'In-Person', bgColor: 'bg-purple-200' }
+  { id: 3, icon: 'solar:keyboard-bold-duotone', title: 'Keyed', bgColor: 'bg-red-300' },
+  { id: 4, icon: 'ph:person-duotone', title: 'In-Person', bgColor: 'bg-purple-300' }
 ];
 
 const freebies: string[] = [
@@ -39,7 +39,7 @@ const freebies: string[] = [
 
 const Services = () => {
   return (
-    <CustomSection id="services" className="bg-body-color-dark">
+    <CustomSection id="services" className="bg-body-color-dark pb-16" waveColor="#ffffff">
       <div className="flex flex-col md:flex-row justify-between w-full">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <CustomHeading
@@ -49,16 +49,56 @@ const Services = () => {
             center={false}
           />
         </div>
-        <div className="w-full md:w-1/2">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            {stats.map((stat) => (
-              <div key={stat.id} className="flex flex-col items-center md:items-end">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 font-semibold">
-                  {stat.sum}
-                </h3>
-                <p className="text-sm sm:text-xs text-body-color">{stat.label}</p>
-              </div>
-            ))}
+
+        <div className="md:w-1/2 flex justify-end">
+          <div className="w-full md:w-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
+              {stats.map((stat) => (
+                <div key={stat.id} className="flex flex-col items-center md:items-start">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 font-semibold">
+                    {stat.sum}
+                  </h3>
+                  <p className="text-sm sm:text-xs text-body-color">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 500 50"
+              className="w-[92%] mt-1 transform -translate-y-4"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: 'orange', stopOpacity: 0 }} />
+                  <stop offset="20%" style={{ stopColor: 'orange', stopOpacity: 0.3 }} />
+                  <stop offset="50%" style={{ stopColor: 'orange', stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: 'red', stopOpacity: 1 }} />
+                </linearGradient>
+              </defs>
+              {/* Line 1 - First irregular curve */}
+              <path
+                d="M 0 30 C 150 10, 250 40, 500 30"
+                stroke="url(#grad1)"
+                strokeWidth="2"
+                fill="transparent"
+              />
+              {/* Line 2 - Intersecting with more variation */}
+              <path
+                d="M 0 35 C 100 50, 300 20, 500 35"
+                stroke="url(#grad1)"
+                strokeWidth="2"
+                fill="transparent"
+              />
+              {/* Line 3 - Slightly wavy, intersecting */}
+              <path
+                d="M 0 40 C 200 20, 350 50, 500 25"
+                stroke="url(#grad1)"
+                strokeWidth="2"
+                fill="transparent"
+              />
+            </svg>
           </div>
         </div>
       </div>

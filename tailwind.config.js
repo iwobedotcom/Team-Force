@@ -22,11 +22,10 @@ export default {
     },
     extend: {
       backgroundImage: {
-        gradient: 'linear-gradient(90deg, rgba(102, 36, 209, 1) 0%, rgba(121, 59, 221, 1) 100%)',
-        'wavy-gray': "url('/images/svg/wave.svg')"
+        gradient: 'linear-gradient(90deg, rgba(102, 36, 209, 1) 0%, rgba(121, 59, 221, 1) 100%)'
       },
       fontFamily: {
-        neue: ['"Uni Neue"', 'sans-serif'],
+        neue: ['Mont Alt', 'sans-serif'],
         sans: ['"Open Sans"', 'sans-serif']
       },
       colors: {
@@ -37,11 +36,7 @@ export default {
         dark: '#1a1a1a',
         primary: '#6624d1',
         'body-color': '#404144',
-        'body-color-dark': '#f5f5f8',
-        'card-purple': '#ac85f3',
-        'card-orange': '#f69ebd',
-        'card-blue': '#9ad1ed',
-        'offering-green': '#71ce7d'
+        'body-color-dark': '#f5f5f8'
       },
       boxShadow: {
         DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',

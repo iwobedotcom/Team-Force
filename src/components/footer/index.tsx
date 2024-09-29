@@ -43,27 +43,26 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="container relative z-10 bg-body-color-dark dark:bg-gray-dark pt-16 md:pt-20 lg:pt-24"
+      className="container relative z-10 bg-body-color-dark dark:bg-gray-dark pt-72"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-4/12 mb-12 lg:mb-16">
             <div className="max-w-[360px]">
               <Link to="/" className="inline-block mb-6">
-                <img src="/images/vite.svg" alt="logo" className="w-16 h-16 dark:hidden" />
-                <img src="/images/vite.svg" alt="logo" className="w-16 h-16 hidden dark:block" />
+                <img src="/images/logo-alt.png" alt="logo" width={100} height={100} />
               </Link>
               <p className="mb-5 text-sm text-body-color dark:text-body-color-dark">
                 Pariatur esse sit dolor proident pariatur aliqua consectetur fugiat ea laboris anim
                 et.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center">
-                  <PhoneIcon className="w-5 h-5 mr-2 text-body-color" />
+                <li className="flex items-center gap-2">
+                  <PhoneIcon />
                   <p className="text-sm font-semibold text-body-color font-neue">+99999999999</p>
                 </li>
-                <li className="flex items-center">
-                  <EmailIcon className="w-5 h-5 mr-2 text-body-color" />
+                <li className="flex items-center gap-2">
+                  <EmailIcon />
                   <p className="text-sm font-medium text-body-color font-neue">
                     teamforce@loremipsum.com
                   </p>
@@ -138,6 +137,8 @@ const Footer = () => {
             variant="button"
             icon={<CaretDownIcon />}
             to="#"
+            color="white"
+            alt
           />
         </div>
       </div>

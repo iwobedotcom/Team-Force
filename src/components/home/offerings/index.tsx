@@ -31,14 +31,14 @@ const offerings: OfferingProps[] = [
 
 const Offerings = () => {
   return (
-    <CustomSection id="offerings" className="bg-white">
+    <CustomSection id="offerings" className="bg-white" waveColor="#ffffff">
       <CustomHeading
         title="You'll love our powerful payments"
         paragraph="We've got all your payments covered"
         size="large"
       />
 
-      <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2 mt-10">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2 mt-10 -right-">
         {offerings.map((offering, index) => (
           <div
             key={offering.id}
@@ -48,7 +48,11 @@ const Offerings = () => {
           >
             <OfferingCard
               {...offering}
-              height={index === offerings.length - 1 ? 'h-[300px]' : 'h-[350px]'}
+              height={index === offerings.length - 1 ? 'h-[350px]' : 'h-[350px]'}
+              imageRes={index === offerings.length - 1 ? 'h-[90%] w-[90%]' : 'h-3/5 w-3/5'}
+              positioning={
+                index === offerings.length - 1 ? 'bottom-0 -right-52' : 'bottom-0 right-0'
+              }
             />
           </div>
         ))}

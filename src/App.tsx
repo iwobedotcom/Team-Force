@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Layout from './layout';
 import AppRoutes from './routes';
 
-export default function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Layout>
@@ -10,4 +10,6 @@ export default function App() {
       </Layout>
     </BrowserRouter>
   );
-}
+};
+
+export default App;

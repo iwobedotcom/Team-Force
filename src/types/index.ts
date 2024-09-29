@@ -27,6 +27,7 @@ export type ButtonLinkProps = {
   size?: 'small' | 'medium' | 'large';
   icon?: ReactElement | null;
   color?: string;
+  alt?: boolean;
 };
 
 export type CustomHeadingProps = {
@@ -41,6 +42,7 @@ export type CustomSectionProps = PropsWithChildren<{
   id: string;
   container?: boolean;
   className?: string;
+  waveColor?: string;
 }>;
 
 export type OfferingProps = {
@@ -51,6 +53,8 @@ export type OfferingProps = {
   link?: string;
   bgColor?: string;
   height?: string;
+  imageRes?: string;
+  positioning?: string;
 };
 
 export type StatsProps = {

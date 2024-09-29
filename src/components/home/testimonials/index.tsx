@@ -86,7 +86,7 @@ const Testimonials: React.FC = () => {
   });
 
   return (
-    <CustomSection id="testimonials" className="bg-gradient">
+    <CustomSection id="testimonials" className="bg-gradient pb-16" waveColor="#6f2fd7">
       <CustomHeading
         title="What people are saying about us"
         size="large"

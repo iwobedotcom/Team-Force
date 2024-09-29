@@ -1,8 +1,8 @@
-import { ButtonLink, CustomSection } from '@/components';
+import { ButtonLink } from '@/components';
 
 const Contact = () => {
   return (
-    <CustomSection id="contact">
+    <section className="container absolute top-[-230px] w-full z-50 bg-transparent">
       <div className="bg-gradient rounded-3xl">
         <div className="mx-auto max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8">
           <div className="mx-auto mt-5 max-w-xl text-center">
@@ -61,7 +61,7 @@ const Contact = () => {
                     rows={5}
                   ></textarea>
                   <label
-                    htmlFor="hs-tac-message"
+                    htmlFor="message"
                     className="absolute top-0 start-0 p-4 h-full text-body-color text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent "
                   >
                     Enter your message
@@ -69,14 +69,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="my-5">
+              <div className="my-10">
                 <ButtonLink label="Get Started Now" to="#" variant="button" size="large" />
               </div>
             </form>
           </div>
         </div>
       </div>
-    </CustomSection>
+    </section>
   );
 };
 

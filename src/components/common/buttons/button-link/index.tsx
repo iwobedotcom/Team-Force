@@ -7,7 +7,8 @@ const ButtonLink = ({
   icon = null,
   size = 'medium',
   variant = 'button',
-  color = 'text-white'
+  color = 'text-white',
+  alt = false
 }: ButtonLinkProps) => {
   const sizeClasses = {
     small: 'py-2 px-3 text-sm',
@@ -30,9 +31,8 @@ const ButtonLink = ({
 
   const buttonClasses = `
     ${baseClasses}
-    bg-gradient-to-t from-[#399d3b] via-[#77cf38] to-[#abf43c]
-    text-white
-    shadow-lg shadow-[#77cf38]/50
+    ${alt ? 'bg-white text-black' : 'bg-gradient-to-t from-[#399d3b] via-[#77cf38] to-[#abf43c] text-white'}
+    shadow-lg ${alt ? 'shadow-white/50' : 'shadow-[#77cf38]/50'}
     hover:brightness-110 hover:animate-pulse
     transform hover:-translate-y-0.5 active:translate-y-0
   `;

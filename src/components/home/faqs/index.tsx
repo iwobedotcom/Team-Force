@@ -39,7 +39,7 @@ const FAQs = () => {
   const [openIndex, setOpenIndex] = useState(1);
 
   return (
-    <CustomSection id="faqs" className="bg-white">
+    <CustomSection id="faqs" className="bg-white relative z-10 pb-72" waveColor="#ffffff">
       <div className="md:grid md:grid-cols-2 md:items-start md:gap-12 xl:gap-32">
         <div className="mt-5 sm:mt-10 lg:mt-0">
           <div className="space-y-1 sm:space-y-3 sticky top-0">

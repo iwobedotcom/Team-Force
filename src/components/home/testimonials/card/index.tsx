@@ -13,7 +13,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   const ratingIcons = Array.from({ length: 5 }, (_, index) => (
     <span key={index} className={`text-2xl ${index < stars ? 'text-yellow-400' : 'text-gray-300'}`}>
-      {StarIcon}
+      <StarIcon />
     </span>
   ));
 

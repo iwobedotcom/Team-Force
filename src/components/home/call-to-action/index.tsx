@@ -4,7 +4,7 @@ import CustomSection from '@/components/common/custom-section';
 
 const CallToAction = () => {
   return (
-    <CustomSection id="cta" className="bg-white">
+    <CustomSection id="cta" className="bg-body-color-dark pb-16" waveColor="#f5f5f8">
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div>
           <img className="rounded-xl" src="/images/girl-smile.png" alt="Girl Smiling" />
