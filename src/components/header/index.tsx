@@ -35,7 +35,7 @@ const Header = () => {
       <header
         className={`header left-0 top-0 z-40 flex w-full items-center ${
           sticky
-            ? 'dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
+            ? 'dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] glassmorphism !bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
             : 'absolute bg-transparent'
         }`}
       >
@@ -44,7 +44,7 @@ const Header = () => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 to="/"
-                className={`header-logo block w-full ${sticky ? 'py-5 lg:py-2' : 'py-8'} `}
+                className={`header-logo block w-full ${sticky ? 'py-5 lg:py-2' : 'py-5'} `}
               >
                 <img
                   src="/images/vite.svg"
@@ -104,7 +104,9 @@ const Header = () => {
                           className={`flex py-2 md:text-md font-bold text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 font-neue ${
                             location.pathname === menuItem.path
                               ? 'text-primary dark:text-white'
-                              : 'text-dark hover:text-primary dark:text-white/70 dark:hover:text-white'
+                              : sticky
+                                ? 'text-black hover:text-primary dark:text-white/70 dark:hover:text-white'
+                                : 'text-white hover:text-primary dark:text-white/70 dark:hover:text-white'
                           }`}
                           onClick={closeNavbar}
                         >
@@ -116,14 +118,21 @@ const Header = () => {
                 </nav>
               </div>
 
-              <div className="flex items-center justify-end lg:pr-0">
-                <Link
+              <div className="flex items-center justify-end lg:pr-0 gap-2">
+                <ButtonLink
+                  label="Login"
                   to="#"
-                  className="hidden px-7 py-3 text-base md:text-md font-neue font-bold text-dark hover:opacity-70 dark:text-white md:block"
-                >
-                  Login
-                </Link>
-                <ButtonLink label="Sign Up" to="#" size="small" className="font-neue font-bold" />
+                  size="medium"
+                  variant="link"
+                  color={sticky ? 'text-black' : 'text-white'}
+                />
+                <ButtonLink
+                  label="Sign Up"
+                  to="#"
+                  size="medium"
+                  variant="button"
+                  color={sticky ? 'text-black' : 'text-white'}
+                />
                 <ThemeToggle />
               </div>
             </div>

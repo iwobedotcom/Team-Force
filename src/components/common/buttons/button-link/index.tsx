@@ -6,7 +6,8 @@ const ButtonLink = ({
   label,
   icon = null,
   size = 'medium',
-  variant = 'button'
+  variant = 'button',
+  color = 'text-black'
 }: ButtonLinkProps) => {
   const sizeClasses = {
     small: 'py-2 px-3 text-sm',
@@ -18,7 +19,7 @@ const ButtonLink = ({
     return (
       <Link
         to={to}
-        className={`text-black font-semibold font-neue  ${sizeClasses[size]} px-0 ${icon ? 'inline-flex items-center gap-x-2 ' : ''}`}
+        className={`${color} font-semibold font-neue  ${sizeClasses[size]} px-0 ${icon ? 'inline-flex items-center gap-x-2 ' : ''}`}
       >
         {label}
         {icon && <span className="">{icon}</span>}
@@ -30,7 +31,7 @@ const ButtonLink = ({
     <Link
       to={to}
       className={`
-        inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 ${sizeClasses[size]}
+        inline-flex items-center gap-x-2 text-sm font-semibold font-neue rounded-lg border border-transparent bg-gray-800 ${color} hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 ${sizeClasses[size]}
         ${icon ? 'inline-flex items-center gap-x-2 ' : ''}
       `}
     >

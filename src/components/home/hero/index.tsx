@@ -55,16 +55,19 @@ const Avatars = ({ name, image }: AvatarProp) => {
 
 const Hero = () => {
   return (
-    <CustomSection id="hero" className="bg-gradient">
-      <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+    <section
+      id="hero"
+      className="container dark:bg-gray-dark relative z-10 overflow-hidden bg-gradient pt-[140px]"
+    >
+      <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20">
         <div>
-          <h1 className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-tight">
+          <h1 className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-none pb-7">
             The next generation payment ways.
           </h1>
 
           <ButtonLink label="Get Started For Free" variant="button" size="large" to="#" />
 
-          <div>
+          <div className="pt-20">
             <p className="mb-4 max-w-3xl text-md font-medium leading-relaxed sm:text-base sm:leading-relaxed font-neue text-white ">
               Over 50k+ Clients &nbsp;&nbsp;&nbsp;
               <span className="text-white/75">all over the world</span>
@@ -130,7 +133,7 @@ const Hero = () => {
           <img className="w-full rounded-md" src="/images/pino.png" alt="Hero Image" />
         </div>
       </div>
-    </CustomSection>
+    </section>
   );
 };
 

@@ -26,6 +26,7 @@ export type ButtonLinkProps = {
   variant?: 'button' | 'link';
   size?: 'small' | 'medium' | 'large';
   icon?: ReactElement | null;
+  color?: string;
 };
 
 export type CustomHeadingProps = {
