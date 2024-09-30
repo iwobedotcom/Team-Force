@@ -1,12 +1,12 @@
-import React, { ReactElement, ReactNode, useEffect } from 'react';
+import { Meta } from '@/components';
+import ScrollToTop from '@/components/common/scroll-to-top';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
+import ThemeProvider from '@/providers/theme';
 import 'preline/preline';
 import { IStaticMethods } from 'preline/preline';
+import { ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import ThemeProvider from '@/providers/theme';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import ScrollToTop from '@/components/common/scroll-to-top';
-import { Meta } from '@/components';
 
 /**
  * The main layout component for the application.
@@ -29,7 +29,7 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: LayoutProps): ReactElement {
+const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -47,4 +47,6 @@ export default function Layout({ children }: LayoutProps): ReactElement {
       </main>
     </ThemeProvider>
   );
-}
+};
+
+export default Layout;

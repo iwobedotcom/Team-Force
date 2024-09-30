@@ -5,7 +5,7 @@ import AppRoutes from './routes';
 /**
  * The main entry point of the application. Renders the application layout and routes.
  */
-const App = () => {
+export default function App() {
   return (
     <BrowserRouter>
       <Layout>
@@ -13,6 +13,4 @@ const App = () => {
       </Layout>
     </BrowserRouter>
   );
-};
-
-export default App;
+}
