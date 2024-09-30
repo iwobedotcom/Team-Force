@@ -2,6 +2,7 @@ import { ButtonLink, CustomHeading, CustomSection } from '@/components';
 import { FAQsProps } from '@/types';
 import { useState } from 'react';
 import FAQItem from './faq-item';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 const faqs: FAQsProps[] = [
   {
@@ -36,6 +37,7 @@ const faqs: FAQsProps[] = [
   }
 ];
 const FAQs = () => {
+  const { isMobile } = useMediaQueries();
   const [openIndex, setOpenIndex] = useState(1);
 
   return (
@@ -58,7 +60,12 @@ const FAQs = () => {
             </div>
 
             <div className="flex flex-row sm:flex-row items-start gap-5">
-              <ButtonLink label="Get in Touch" to="#" size="medium" variant="button" />
+              <ButtonLink
+                label="Get in Touch"
+                to="#"
+                size={isMobile ? 'small' : 'medium'}
+                variant="button"
+              />
               <img
                 className="rounded-xl w-44 h-44 object-cover"
                 src="/images/boy-girl.png"

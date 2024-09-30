@@ -9,11 +9,13 @@ const PaymentMethods = () => {
       container={false}
       waveColor="#ffffff"
     >
-      <CustomHeading
-        title="All major payment methods"
-        paragraph="We've got all your payments covered"
-        size="large"
-      />
+      <div className="container">
+        <CustomHeading
+          title="All major payment methods"
+          paragraph="We've got all your payments covered"
+          size="large"
+        />
+      </div>
       <img
         src="/images/team-force-network.png"
         alt="offerings"

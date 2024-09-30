@@ -3,6 +3,7 @@ import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
 import { ServsProps, StatsProps } from '@/types';
 import { Icon } from '@iconify/react';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 const stats: StatsProps[] = [
   { id: 1, sum: '3.5m', label: 'Active Users' },
@@ -38,6 +39,7 @@ const freebies: string[] = [
 ];
 
 const Services = () => {
+  const { isMobile } = useMediaQueries();
   return (
     <CustomSection id="services" className="bg-body-color-dark pb-16" waveColor="#ffffff">
       <div className="flex flex-col md:flex-row justify-between w-full">
@@ -52,13 +54,13 @@ const Services = () => {
 
         <div className="md:w-1/2 flex justify-end">
           <div className="w-full md:w-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
+            <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-5">
               {stats.map((stat) => (
                 <div key={stat.id} className="flex flex-col items-center md:items-start">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 font-semibold">
+                  <h3 className="text-xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 font-semibold">
                     {stat.sum}
                   </h3>
-                  <p className="text-sm sm:text-xs text-body-color">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-body-color">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -103,8 +105,8 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="max-w-[85rem] py-10 sm:px-6 lg:py-14 mx-auto">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-[85rem] py-10 sm:px-6 lg:py-14 mx-auto container">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 space-y-3">
           {servs.map((serv) => (
             <div className="relative w-full h-[250px]">
               {/* Rotated background card */}
@@ -120,7 +122,7 @@ const Services = () => {
               <div
                 className={`relative z-10 flex flex-col h-full glassmorphism shadow-sm rounded-3xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70`}
               >
-                <div className="p-4 md:p-6 flex flex-col h-full">
+                <div className="p-6 md:p-6 flex flex-col h-full">
                   <div className="mb-auto">
                     <Icon icon={serv.icon} width={30} height={30} />
                   </div>
@@ -132,11 +134,11 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="w-4/5 py-10 sm:px-6 lg:py-14 mx-auto">
+      <div className={`py-10 sm:px-6 lg:py-14 ${isMobile ? 'w-full' : 'mx-auto w-4/5'}`}>
         <div
           className={`group relative flex flex-col shadow-sm rounded-3xl overflow-hidden bg-red-100`}
         >
-          <div className="p-3 md:p-8 flex flex-col h-full w-full z-10">
+          <div className="p-8 md:p-12 flex flex-col h-full w-full z-10">
             <h3 className="text-2xl font-semibold text-black">
               More free tools than you can handle
             </h3>

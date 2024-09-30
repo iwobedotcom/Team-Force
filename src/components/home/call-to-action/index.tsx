@@ -1,10 +1,12 @@
 import ButtonLink from '@/components/common/buttons/button-link';
 import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 const CallToAction = () => {
+  const { isMobile } = useMediaQueries();
   return (
-    <CustomSection id="cta" className="bg-body-color-dark pb-16" waveColor="#f5f5f8">
+    <CustomSection id="cta" className="bg-body-color-dark pb-16" waveColor="#eeeef5">
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div>
           <img className="rounded-xl" src="/images/girl-smile.png" alt="Girl Smiling" />
@@ -46,11 +48,11 @@ const CallToAction = () => {
               </li>
             </ul>
 
-            <div className="space-y-1 md:space-y-3">
+            <div className="space-y-3 md:space-y-3">
               <ButtonLink
                 label="Open An Account in Minutes"
                 to="#"
-                size="medium"
+                size={isMobile ? 'small' : 'medium'}
                 variant="button"
               />
 

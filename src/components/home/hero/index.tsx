@@ -1,9 +1,11 @@
 import ButtonLink from '@/components/common/buttons/button-link';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 type AvatarProp = {
   id: number;
   name: string;
   image: string;
+  isMobile?: boolean;
 };
 
 const clients: AvatarProp[] = [
@@ -33,13 +35,13 @@ const clients: AvatarProp[] = [
   }
 ];
 
-const Avatar = ({ name, image }: AvatarProp) => {
+const Avatar = ({ name, image, isMobile }: AvatarProp) => {
   return (
     <div className="hs-tooltip inline-block">
       <img
-        className="hs-tooltip-toggle relative inline-block h-10 w-10 rounded-full ring-2 ring-white hover:z-10 dark:ring-neutral-900"
+        className={`hs-tooltip-toggle relative inline-block ${isMobile ? 'h-9 w-9' : 'h-10 w-10'} rounded-full ring-2 ring-white hover:z-10 dark:ring-neutral-900`}
         src={image}
-        alt={`${name}'s avatar`}
+        alt={`${name}'s Avatar`}
       />
       <span
         className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 inline-block absolute invisible z-20 py-1.5 px-2.5 glassmorphism text-xs text-white rounded-lg"
@@ -52,6 +54,7 @@ const Avatar = ({ name, image }: AvatarProp) => {
 };
 
 const Hero = () => {
+  const { isMobile } = useMediaQueries();
   return (
     <section
       id="hero"
@@ -64,24 +67,33 @@ const Hero = () => {
           </h1>
 
           <div className="mt-3">
-            <ButtonLink label="Get Started For Free" variant="button" size="large" to="#" />
+            <ButtonLink
+              label="Get Started For Free"
+              variant="button"
+              size={isMobile ? 'medium' : 'large'}
+              to="#"
+            />
           </div>
 
-          <div className="relative mt-16 md:mt-20 lg:mt-24">
-            <p className="mb-4 max-w-3xl text-md font-medium leading-relaxed sm:text-base sm:leading-relaxed font-neue text-white ">
+          <div className="relative mt-10 md:mt-20 lg:mt-24">
+            <p className="mb-4 max-w-3xl text-sm font-medium leading-relaxed sm:text-base sm:leading-relaxed font-neue text-white ">
               Over 50k+ Clients &nbsp;&nbsp;&nbsp;
               <span className="text-white/75">all over the world</span>
             </p>
             <div className="flex -space-x-2">
               {clients.map((client) => (
-                <Avatar key={client.id} {...client} />
+                <Avatar key={client.id} {...client} isMobile={isMobile} />
               ))}
             </div>
           </div>
         </div>
 
         <div className="relative ms-4">
-          <img className="w-full rounded-md" src="/images/pino.png" alt="Hero Image" />
+          <img
+            className={`w-full rounded-md ${isMobile ? 'mt-5' : ''}`}
+            src="/images/pino.png"
+            alt="Hero Image"
+          />
           <div className="absolute right-0 top-0 opacity-30 lg:opacity-70">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -35,8 +35,8 @@ export default {
         black: '#000229',
         dark: '#1a1a1a',
         primary: '#6624d1',
-        'body-color': '#404144',
-        'body-color-dark': '#f5f5f8'
+        'body-color': '#788293',
+        'body-color-dark': '#eeeef5'
       },
       boxShadow: {
         DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
