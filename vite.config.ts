@@ -19,8 +19,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './index.html',
-        sitemap: './sitemap.xml'
+        main: './index.html'
+        // sitemap: './sitemap.xml'
       }
     }
   },

@@ -6,7 +6,7 @@ import ThemeProvider from '@/providers/theme';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import ScrollToTop from '@/components/common/scroll-to-top';
-import { ErrorBoundary, Meta } from '@/components';
+import { Meta } from '@/components';
 
 /**
  * The main layout component for the application.
@@ -37,16 +37,14 @@ export default function Layout({ children }: LayoutProps): ReactElement {
   }, [location.pathname]);
 
   return (
-    <ErrorBoundary>
-      <ThemeProvider>
-        <Meta />
-        <main className="flex flex-col bg-white">
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
-        </main>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider>
+      <Meta />
+      <main className="flex flex-col bg-white">
+        <Header />
+        {children}
+        <Footer />
+        <ScrollToTop />
+      </main>
+    </ThemeProvider>
   );
 }
