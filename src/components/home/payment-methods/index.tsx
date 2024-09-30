@@ -14,12 +14,14 @@ const PaymentMethods = () => {
           title="All major payment methods"
           paragraph="We've got all your payments covered"
           size="large"
+          className="w-full md:w-2/3  text-center mx-auto mb-12"
         />
       </div>
       <img
         src="/images/team-force-network.png"
         alt="offerings"
         className=" inset-0 object-cover w-full h-full"
+        data-aos="fade-left"
       />
     </CustomSection>
   );

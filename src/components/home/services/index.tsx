@@ -52,7 +52,7 @@ const Services = () => {
           />
         </div>
 
-        <div className="md:w-1/2 flex justify-end">
+        <div className="md:w-1/2 flex justify-end" data-aos="fade-left">
           <div className="w-full md:w-auto">
             <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-5">
               {stats.map((stat) => (
@@ -108,7 +108,7 @@ const Services = () => {
       <div className="max-w-[85rem] py-10 sm:px-6 lg:py-14 mx-auto container">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 space-y-3">
           {servs.map((serv) => (
-            <div className="relative w-full h-[250px]">
+            <div className="relative w-full h-[250px]" data-aos="flip-left">
               {/* Rotated background card */}
               <div
                 className={`absolute inset-0 ${serv.bgColor} rounded-3xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70`}
@@ -137,6 +137,7 @@ const Services = () => {
       <div className={`py-10 sm:px-6 lg:py-14 ${isMobile ? 'w-full' : 'mx-auto w-4/5'}`}>
         <div
           className={`group relative flex flex-col shadow-sm rounded-3xl overflow-hidden bg-red-100`}
+          data-aos="flip-up"
         >
           <div className="p-8 md:p-12 flex flex-col h-full w-full z-10">
             <h3 className="text-2xl font-semibold text-black">

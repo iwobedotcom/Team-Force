@@ -19,7 +19,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
   return (
     <div className="flex h-auto p-1">
-      <div className="flex flex-col rounded-3xl glassmorphism w-full overflow-hidden shadow-[5px_5px_15px_rgba(0,0,0,0.2),-5px_-5px_15px_rgba(255,255,255,0.1)]">
+      <div
+        className="flex flex-col rounded-3xl glassmorphism w-full overflow-hidden shadow-[5px_5px_15px_rgba(0,0,0,0.2),-5px_-5px_15px_rgba(255,255,255,0.1)]"
+        data-aos="flip-left"
+      >
         <div className="flex-auto p-6 md:p-8">
           <div className="flex gap-1 mb-4">{ratingIcons}</div>
           <p className="text-sm md:text-base text-white dark:text-neutral-200 mb-6">"{message}"</p>

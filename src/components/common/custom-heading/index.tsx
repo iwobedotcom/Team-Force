@@ -17,10 +17,11 @@ const CustomHeading = ({
 
   return (
     <div
-      className={`relative flex flex-col left-0 top-0 w-full ${center ? 'justify-center items-center' : 'justify-start items-start'}`}
+      className={`relative flex flex-col left-0 top-0 ${center ? 'justify-center items-center' : 'justify-start items-start'}`}
     >
       <h1
         className={`${isMobile ? 'mb-1' : 'mb-4'} font-bold font-neue ${sizeClasses[size]} ${className}`}
+        data-aos="fade-up"
       >
         {title}
         <span className="text-primary">.</span>
@@ -28,6 +29,8 @@ const CustomHeading = ({
       {paragraph && (
         <p
           className={`mb-4 max-w-3xl text-base font-medium leading-relaxed sm:leading-relaxed sm:text-lg text-body-color ${isMobile ? 'mr-auto' : ''} sm:leading-relaxed`}
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           {paragraph}
         </p>

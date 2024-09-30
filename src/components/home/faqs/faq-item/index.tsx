@@ -13,6 +13,7 @@ const FAQItem = ({ id, question, answer, isOpen, onToggle }: FAQItemProps) => {
         isOpen ? 'hs-accordion-active bg-gray-50 shadow-md' : ''
       } transition-all duration-300 dark:hs-accordion-active:bg-gray-dark mb-1`}
       id={`hs-basic-with-title-and-arrow-stretched-heading-${id}`}
+      data-aos="fade-left"
     >
       <button
         className="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 rounded-lg pb-3 text-start text-md font-bold font-neue text-black transition focus:outline-none md:text-lg"

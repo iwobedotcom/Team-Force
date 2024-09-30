@@ -46,7 +46,11 @@ const FAQs = () => {
         <div className="mt-5 sm:mt-10 lg:mt-0">
           <div className="space-y-1 sm:space-y-3 sticky top-0">
             <div className="space-y-2 md:space-y-4">
-              <p className="text-sm text-black font-semibold font-neue underline underline-offset-2 decoration-lime-400 decoration-2">
+              <p
+                className="text-sm text-black font-semibold font-neue underline underline-offset-2 decoration-lime-400 decoration-2"
+                data-aos="fade-down"
+                data-aos-delay="300"
+              >
                 Support
               </p>
               <div className="w-11/12">
@@ -60,16 +64,20 @@ const FAQs = () => {
             </div>
 
             <div className="flex flex-row sm:flex-row items-start gap-5">
-              <ButtonLink
-                label="Get in Touch"
-                to="#"
-                size={isMobile ? 'small' : 'medium'}
-                variant="button"
-              />
+              <div data-aos="fade-up" data-aos-delay="200">
+                <ButtonLink
+                  label="Get in Touch"
+                  to="#"
+                  size={isMobile ? 'small' : 'medium'}
+                  variant="button"
+                />
+              </div>
               <img
                 className="rounded-xl w-44 h-44 object-cover"
                 src="/images/boy-girl.png"
                 alt="Boy & Girl"
+                data-aos="fade-left"
+                data-aos-delay="300"
               />
             </div>
           </div>

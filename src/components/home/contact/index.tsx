@@ -3,7 +3,7 @@ import { ButtonLink } from '@/components';
 const Contact = () => {
   return (
     <section className="container absolute top-[-230px] w-full z-50 bg-transparent">
-      <div className="bg-gradient rounded-3xl">
+      <div className="bg-gradient rounded-3xl" data-aos="fade-up">
         <div className="mx-auto max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8">
           <div className="mx-auto mt-5 max-w-xl text-center">
             <form>

@@ -69,6 +69,7 @@ const OfferingCard = ({
   return (
     <div
       className={`group relative flex flex-col shadow-sm rounded-3xl overflow-hidden ${heightClass} ${bgColor}`}
+      data-aos="flip-left"
     >
       {isMobile ? mobileLayout : desktopLayout}
     </div>
