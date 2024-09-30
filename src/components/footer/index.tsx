@@ -1,7 +1,8 @@
-import { FooterNavLinksProps } from '@/types';
+import { footerNavlinks } from '@/config/footerNavlinks';
+import { BackgroundColor, DownloadButtonProp, TextColor } from '@/types';
+import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import ButtonLink from '../common/buttons/button-link';
-import DownloadButton from '../common/buttons/download-button';
 import SocialsButton from '../common/buttons/socials-button';
 import {
   AppStoreIcon,
@@ -10,34 +11,44 @@ import {
   FacebookIcon,
   GooglePlayIcon,
   InstagramIcon,
+  LoaderIcon,
   PhoneIcon,
   TwitterIcon,
   VimeoIcon
 } from '../icons';
 
-const footerNavlinks: FooterNavLinksProps[] = [
-  {
-    heading: 'Solutions',
-    menu: [
-      { id: 1, title: 'Payments', link: '#' },
-      { id: 2, title: 'Advances', link: '#' },
-      { id: 3, title: 'Online Checkout', link: '#' },
-      { id: 4, title: 'Dashboard', link: '#' },
-      { id: 5, title: 'Get Started', link: '#' }
-    ]
-  },
-  {
-    heading: 'Other Pages',
-    menu: [
-      { id: 6, title: 'About', link: '#' },
-      { id: 7, title: 'Services', link: '#' },
-      { id: 8, title: 'How It Works', link: '#' },
-      { id: 9, title: 'Pricing Plan', link: '#' },
-      { id: 10, title: 'Blog', link: '#' },
-      { id: 11, title: 'Contact', link: '#' }
-    ]
-  }
-];
+/**
+ * The `Footer` component represents the footer section of the application.
+ * It includes various sections such as the company logo, contact information,
+ * navigation links, and download buttons for the mobile app.
+ *
+ * The footer is designed to be responsive and includes dark mode support.
+ * It uses the `footerNavlinks` configuration to populate the navigation links.
+ * The `DownloadButton` component is used to render the app download buttons.
+ *
+ * The footer also includes social media buttons and a language selector.
+ */
+
+/**
+ * The `DownloadButton` component renders a button with an icon and text to represent a download link for a mobile app.
+ *
+ * @param store - The text to display for the app store name (e.g. "App Store", "Google Play").
+ * @param icon - The icon component to display next to the store name.
+ * @param bgColor - The background color of the button.
+ * @param textColor - The text color of the button.
+ * @returns A React component that renders the download button.
+ */
+const DownloadButton = ({ store, icon, bgColor, textColor }: DownloadButtonProp) => (
+  <button
+    type="button"
+    className={`flex items-center justify-center w-40 mt-3 ${textColor} ${bgColor} h-10 rounded-lg`}
+  >
+    <div className="mr-3">
+      <Suspense fallback={<LoaderIcon />}>{icon}</Suspense>
+    </div>
+    <div className="-mt-1 font-neue text-md font-semibold">{store}</div>
+  </button>
+);
 
 const Footer = () => {
   return (
@@ -105,15 +116,23 @@ const Footer = () => {
               <div className="flex flex-col gap-2">
                 <DownloadButton
                   store="App Store"
-                  icon={<AppStoreIcon />}
-                  bgColor="bg-black"
-                  textColor="text-white"
+                  icon={
+                    <Suspense fallback={<LoaderIcon />}>
+                      <AppStoreIcon />
+                    </Suspense>
+                  }
+                  bgColor={BackgroundColor.Black}
+                  textColor={TextColor.White}
                 />
                 <DownloadButton
                   store="Google Play"
-                  icon={<GooglePlayIcon />}
-                  bgColor="bg-white"
-                  textColor="text-black"
+                  icon={
+                    <Suspense fallback={<LoaderIcon />}>
+                      <GooglePlayIcon />
+                    </Suspense>
+                  }
+                  bgColor={BackgroundColor.White}
+                  textColor={TextColor.Black}
                 />
               </div>
             </div>

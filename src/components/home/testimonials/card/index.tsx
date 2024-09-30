@@ -1,16 +1,20 @@
 import React from 'react';
 import { StarIcon } from '@/components/icons';
-import { TestimonialsProps } from '@/types';
+import { TestimonialsProp } from '@/types';
 
-type TestimonialCardProps = Omit<TestimonialsProps, 'id'>;
+type TestimonialCardProp = Omit<TestimonialsProp, 'id'>;
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({
-  name,
-  message,
-  stars,
-  title,
-  avatar
-}) => {
+/**
+ * Renders a testimonial card component with the provided testimonial data.
+ *
+ * @param name - The name of the person providing the testimonial.
+ * @param message - The testimonial message.
+ * @param stars - The number of stars to display for the testimonial rating.
+ * @param title - The title or role of the person providing the testimonial.
+ * @param avatar - The URL of the avatar image for the person providing the testimonial.
+ * @returns A React component that renders the testimonial card.
+ */
+const TestimonialCard = ({ name, message, stars, title, avatar }: TestimonialCardProp) => {
   const ratingIcons = Array.from({ length: 5 }, (_, index) => (
     <span key={index} className={`text-2xl ${index < stars ? 'text-yellow-400' : 'text-gray-300'}`}>
       <StarIcon />

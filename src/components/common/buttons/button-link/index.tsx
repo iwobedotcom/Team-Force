@@ -1,45 +1,42 @@
-import { ButtonLinkProps } from '@/types';
+import { useButtonClasses } from '@/hooks/useButtonClasses';
+import { ButtonLinkProp, ButtonSize, ButtonVariant } from '@/types';
 import { Link } from 'react-router-dom';
 
+/**
+ * A React component that renders a button-styled link.
+ *
+ * @param {ButtonLinkProp} props - The props for the button link component.
+ * @param {string} props.to - The URL or path to link to.
+ * @param {string} props.label - The label text to display on the button.
+ * @param {React.ReactNode} [props.icon] - An optional icon to display alongside the label.
+ * @param {ButtonSize} [props.size=ButtonSize.Medium] - The size of the button.
+ * @param {ButtonVariant} [props.variant=ButtonVariant.Button] - The variant of the button (either a button or a link).
+ * @param {string} [props.color='text-white'] - The color of the button text.
+ * @param {boolean} [props.alt=false] - Whether to use an alternative button style.
+ * @returns {React.ReactElement} - The rendered button link component.
+ */
 const ButtonLink = ({
   to,
   label,
   icon = null,
-  size = 'medium',
-  variant = 'button',
+  size = ButtonSize.Medium,
+  variant = ButtonVariant.Button,
   color = 'text-white',
   alt = false
-}: ButtonLinkProps) => {
-  const sizeClasses = {
-    small: 'py-2 px-3 text-sm',
-    medium: 'py-2 px-6 text-base',
-    large: 'py-3 px-8 text-lg'
-  };
+}: ButtonLinkProp) => {
+  const { linkClasses, buttonClasses } = useButtonClasses({
+    to,
+    label,
+    icon,
+    size,
+    variant,
+    color,
+    alt
+  });
 
-  const baseClasses = `
-    font-bold rounded-lg font-neue
-    transition-all duration-300 ease-in-out
-    ${sizeClasses[size]}
-    ${icon ? 'inline-flex items-center gap-x-2' : ''}
-  `;
-
-  const linkClasses = `
-    ${baseClasses}
-    ${color}
-    hover:text-white/75
-  `;
-
-  const buttonClasses = `
-    ${baseClasses}
-    ${alt ? 'bg-white text-black' : 'bg-gradient-to-t from-[#399d3b] via-[#77cf38] to-[#abf43c] text-white'}
-    shadow-lg ${alt ? 'shadow-white/50' : 'shadow-[#77cf38]/50'}
-    hover:brightness-110 hover:animate-pulse
-    transform hover:-translate-y-0.5 active:translate-y-0
-  `;
-
-  if (variant === 'link') {
+  if (variant === ButtonVariant.Link) {
     return (
-      <Link to={to} className={linkClasses}>
+      <Link to={to} className={linkClasses} role="button" aria-label={label}>
         {label}
         {icon && <span>{icon}</span>}
       </Link>
@@ -47,7 +44,7 @@ const ButtonLink = ({
   }
 
   return (
-    <Link to={to} className={buttonClasses}>
+    <Link to={to} className={buttonClasses} role="button" aria-label={label}>
       {label}
       {icon && <span>{icon}</span>}
     </Link>

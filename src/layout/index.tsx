@@ -6,7 +6,18 @@ import ThemeProvider from '@/providers/theme';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import ScrollToTop from '@/components/common/scroll-to-top';
-import { Meta } from '@/components';
+import { ErrorBoundary, Meta } from '@/components';
+
+/**
+ * The main layout component for the application.
+ *
+ * This component wraps the entire application and provides a consistent layout with a header, footer, and scroll-to-top button.
+ * It also sets up the theme provider and meta tags for the application.
+ *
+ * @param {LayoutProps} props - The props for the layout component.
+ * @param {ReactNode} props.children - The content to be rendered within the layout.
+ * @returns {ReactElement} The layout component.
+ */
 
 declare global {
   interface Window {
@@ -26,17 +37,16 @@ export default function Layout({ children }: LayoutProps): ReactElement {
   }, [location.pathname]);
 
   return (
-    <ThemeProvider>
-      <Meta />
-      {/*   <div className="flex flex-col h-screen overflow-hidden bg-body-color dark:bg-black"> */}
-      <div className="flex flex-col bg-white">
-        <Header />
-        {/*  <div className="flex-grow overflow-y-scroll snap-y snap-mandatory"> */}
-        {children}
-        <Footer />
-        {/* </div> */}
-        <ScrollToTop />
-      </div>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <Meta />
+        <main className="flex flex-col bg-white">
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </main>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

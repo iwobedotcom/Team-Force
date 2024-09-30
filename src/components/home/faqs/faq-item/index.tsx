@@ -1,12 +1,17 @@
+import { FAQItemProp } from '@/types';
 import React from 'react';
-import { FAQsProps } from '@/types';
 
-type FAQItemProps = FAQsProps & {
-  isOpen: boolean;
-  onToggle: () => void;
-};
-
-const FAQItem = ({ id, question, answer, isOpen, onToggle }: FAQItemProps) => {
+/**
+ * Renders a FAQ item component with a toggle functionality.
+ *
+ * @param id - The unique identifier for the FAQ item.
+ * @param question - The question text for the FAQ item.
+ * @param answer - The answer text for the FAQ item.
+ * @param isOpen - A boolean indicating whether the FAQ item is currently open.
+ * @param onToggle - A function to toggle the open state of the FAQ item.
+ * @returns A React component representing a FAQ item.
+ */
+const FAQItem = ({ id, question, answer, isOpen, onToggle }: FAQItemProp) => {
   return (
     <div
       className={`hs-accordion rounded-xl p-6 ${

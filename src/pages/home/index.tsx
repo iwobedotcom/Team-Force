@@ -9,7 +9,18 @@ import {
   Testimonials
 } from '@/components';
 
-export default function HomePage() {
+/**
+ * Renders the main homepage component, which includes the following sections:
+ * - Hero
+ * - Offerings
+ * - Payment Methods
+ * - Services
+ * - Call to Action
+ * - Testimonials
+ * - FAQs
+ * - Contact
+ */
+const HomePage = () => {
   return (
     <>
       <Hero />
@@ -24,4 +35,6 @@ export default function HomePage() {
       </div>
     </>
   );
-}
+};
+
+export default HomePage;

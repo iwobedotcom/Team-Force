@@ -1,34 +1,13 @@
 import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
-import { OfferingProps } from '@/types';
 import OfferingCard from './offering-card';
+import { offerings } from '@/config/offerings';
 
-const offerings: OfferingProps[] = [
-  {
-    id: 1,
-    title: 'Scan  & Go',
-    description:
-      'Transform your payment link into a QR code that customers can scan with their phone to  pay.',
-    mockup: '/images/scan-and-go.png',
-    bgColor: 'bg-red-100'
-  },
-  {
-    id: 2,
-    title: 'Easily Send Requests via e-mail or SMS',
-    description: '...or copy-paste the link',
-    mockup: '/images/email-and-sms.png',
-    bgColor: 'bg-blue-100'
-  },
-  {
-    id: 3,
-    title: 'Online Billing & Invoicing Payments',
-    description: 'Get paid faster with Online Invoicing and Virtual Terminal',
-    mockup: '/images/online-billing-and-invoicing.png',
-    link: '#',
-    bgColor: 'bg-purple-100'
-  }
-];
-
+/**
+ * Renders the Offerings section of the home page, which displays a list of payment offerings.
+ * The section includes a custom heading and a grid of OfferingCard components.
+ * The layout and styling of the section is handled by the CustomSection and OfferingCard components.
+ */
 const Offerings = () => {
   return (
     <CustomSection id="offerings" className="bg-white" waveColor="#ffffff">

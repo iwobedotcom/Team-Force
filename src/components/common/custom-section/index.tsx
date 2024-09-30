@@ -1,5 +1,16 @@
 import { CustomSectionProps } from '@/types';
 
+/**
+ * A custom section component that renders a section with a wavy divider at the top.
+ *
+ * @param {CustomSectionProps} props - The props for the custom section component.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the section.
+ * @param {string} [props.id] - The ID of the section.
+ * @param {string} [props.className] - Additional CSS classes to apply to the section.
+ * @param {boolean} [props.container=true] - Whether to wrap the content in a container.
+ * @param {string} [props.waveColor] - The color of the wavy divider.
+ * @returns {React.ReactElement} - The custom section component.
+ */
 const CustomSection = ({
   children,
   id,
@@ -15,8 +26,7 @@ const CustomSection = ({
       ${className}
     `}
     >
-      {/* SVG Divider */}
-      <div className="custom-shape-divider-top-1727643063">
+      <div className="wavy-divider">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +43,7 @@ const CustomSection = ({
       <div className={container ? 'container' : ''}>{children}</div>
 
       <style>{`
-        .custom-shape-divider-top-1727643063 {
+      .wavy-divider {
           position: absolute;
           top: 0;
           left: 0;
@@ -41,7 +51,7 @@ const CustomSection = ({
           overflow: hidden;
           line-height: 0;
         }
-        .custom-shape-divider-top-1727643063 svg {
+        .wavy-divider svg {
           position: relative;
           display: block;
           width: calc(153% + 1.3px);

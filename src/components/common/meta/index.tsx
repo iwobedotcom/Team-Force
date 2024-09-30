@@ -1,7 +1,15 @@
 import { Helmet } from 'react-helmet-async';
 import { metadata } from '../../../config/metadata';
 
-export default function Meta() {
+/**
+ * Renders a Helmet component with metadata for the application.
+ *
+ * The metadata is sourced from the `metadata` object imported from the `../../../config/metadata` module.
+ *
+ * This component should be used to set the title, description, keywords, referrer, robots, and other meta tags
+ * for the application, ensuring a consistent and SEO-friendly presentation across the application.
+ */
+const Meta = () => {
   const { applicationName, description, keywords, referrer, robots, title } = metadata;
   return (
     <Helmet>
@@ -20,4 +28,6 @@ export default function Meta() {
       <link rel="shortcut icon" href="/assets/favicon.svg" />
     </Helmet>
   );
-}
+};
+
+export default Meta;

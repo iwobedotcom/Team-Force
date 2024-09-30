@@ -1,8 +1,14 @@
 import ButtonLink from '@/components/common/buttons/button-link';
 import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
-import useMediaQueries from '@/hooks/useMediaQueries';
+import { useMediaQueries } from '@/hooks/useMediaQueries';
 
+/**
+ * Renders the call-to-action section of the home page.
+ * This section includes a hero image, a heading, a list of steps to open an account, and a call-to-action button.
+ * The layout and styling of the section are handled by the `CustomSection` and other custom components.
+ * The content and behavior of the section are defined in this component.
+ */
 const CallToAction = () => {
   const { isMobile } = useMediaQueries();
   return (
@@ -10,7 +16,7 @@ const CallToAction = () => {
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div>
           <img
-            className="rounded-xl"
+            className="rounded-xl image-tilt"
             src="/images/girl-smile.png"
             alt="Girl Smiling"
             data-aos="fade-right"

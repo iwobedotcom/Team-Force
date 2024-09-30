@@ -1,41 +1,16 @@
 import { ButtonLink, CustomHeading, CustomSection } from '@/components';
-import { FAQsProps } from '@/types';
 import { useState } from 'react';
 import FAQItem from './faq-item';
-import useMediaQueries from '@/hooks/useMediaQueries';
+import { useMediaQueries } from '@/hooks/useMediaQueries';
+import { faqs } from '@/config/faqs';
 
-const faqs: FAQsProps[] = [
-  {
-    id: 1,
-    question: 'Do I need to change banks??',
-    answer:
-      'Nulla irure ipsum labore consequat duis. Adipisicing cupidatat cillum amet cupidatat aliqua velit dolore nostrud cupidatat adipisicing sit ipsum officia et.'
-  },
-  {
-    id: 2,
-    question: 'Do I need to change banks??',
-    answer:
-      'Nulla irure ipsum labore consequat duis. Adipisicing cupidatat cillum amet cupidatat aliqua velit dolore nostrud cupidatat adipisicing sit ipsum officia et. '
-  },
-  {
-    id: 3,
-    question: 'How can I order equipment?',
-    answer:
-      'Nulla irure ipsum labore consequat duis. Adipisicing cupidatat cillum amet cupidatat aliqua velit dolore nostrud cupidatat adipisicing sit ipsum officia et. '
-  },
-  {
-    id: 4,
-    question: 'Do you offer volume discounts?',
-    answer:
-      'Nulla irure ipsum labore consequat duis. Adipisicing cupidatat cillum amet cupidatat aliqua velit dolore nostrud cupidatat adipisicing sit ipsum officia et.'
-  },
-  {
-    id: 5,
-    question: 'How does signing up work?',
-    answer:
-      'Nulla irure ipsum labore consequat duis. Adipisicing cupidatat cillum amet cupidatat aliqua velit dolore nostrud cupidatat adipisicing sit ipsum officia et. '
-  }
-];
+/**
+ * Renders the FAQs (Frequently Asked Questions) section of the home page.
+ *
+ * The FAQs section includes a heading, a list of FAQs, and a button to get in touch.
+ * The FAQs are rendered using the `FAQItem` component, which handles the open/close state of each FAQ.
+ * The section is wrapped in a `CustomSection` component with a white background and a wave pattern.
+ */
 const FAQs = () => {
   const { isMobile } = useMediaQueries();
   const [openIndex, setOpenIndex] = useState(1);
@@ -73,7 +48,7 @@ const FAQs = () => {
                 />
               </div>
               <img
-                className="rounded-xl w-44 h-44 object-cover"
+                className="rounded-xl w-44 h-44 object-cover image-tilt"
                 src="/images/boy-girl.png"
                 alt="Boy & Girl"
                 data-aos="fade-left"

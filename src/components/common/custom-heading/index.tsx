@@ -1,13 +1,18 @@
-import useMediaQueries from '@/hooks/useMediaQueries';
-import { CustomHeadingProps } from '@/types';
+import { useMediaQueries } from '@/hooks/useMediaQueries';
+import { CustomHeadingProp } from '@/types';
 
-const CustomHeading = ({
-  title,
-  size,
-  paragraph,
-  center = true,
-  className
-}: CustomHeadingProps) => {
+/**
+ * A custom heading component that renders a title and an optional paragraph.
+ *
+ * @param title - The title to be displayed.
+ * @param size - The size of the title, can be 'small', 'medium', or 'large'.
+ * @param paragraph - An optional paragraph to be displayed below the title.
+ * @param center - Whether to center the heading and paragraph, defaults to true.
+ * @param className - An optional CSS class to be applied to the heading.
+ * @returns A React component that renders the custom heading.
+ */
+
+const CustomHeading = ({ title, size, paragraph, center = true, className }: CustomHeadingProp) => {
   const { isMobile } = useMediaQueries();
   const sizeClasses = {
     small: 'text-xl sm:text-3xl',

@@ -1,8 +1,24 @@
 import React from 'react';
 import ButtonLink from '@/components/common/buttons/button-link';
 import { ArrowRightIcon } from '@/components/icons';
-import useMediaQueries from '@/hooks/useMediaQueries';
-import { OfferingProps } from '@/types';
+import { OfferingProp } from '@/types';
+import { useMediaQueries } from '@/hooks/useMediaQueries';
+
+/**
+ * A React component that renders an offering card with a title, description, mockup image, and a link.
+ * The component adjusts its layout based on the screen size (desktop or mobile).
+ *
+ * @param {OfferingProp} props - The props for the OfferingCard component.
+ * @param {string} props.title - The title of the offering.
+ * @param {string} props.description - The description of the offering.
+ * @param {string} props.mockup - The URL of the mockup image.
+ * @param {string} props.bgColor - The background color of the card.
+ * @param {string} props.link - The URL of the link associated with the offering.
+ * @param {string} [props.height] - The height of the card.
+ * @param {string} [props.imageRes] - The CSS class for the image resolution.
+ * @param {string} [props.positioning] - The CSS class for the positioning of the mockup image.
+ * @returns {JSX.Element} - The OfferingCard component.
+ */
 
 const OfferingCard = ({
   title,
@@ -13,7 +29,7 @@ const OfferingCard = ({
   height,
   imageRes,
   positioning
-}: OfferingProps) => {
+}: OfferingProp) => {
   const { isMobile } = useMediaQueries();
   const heightClass = height || 'h-full';
 

@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 
-export default function ScrollToTop() {
+/**
+ * A React component that renders a "Scroll to Top" button that appears when the user scrolls down past a certain point on the page.
+ *
+ * The button is fixed to the bottom-right corner of the screen and becomes visible when the user scrolls past 300 pixels from the top of the page.
+ * Clicking the button will smoothly scroll the page back to the top.
+ */
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
@@ -37,4 +43,6 @@ export default function ScrollToTop() {
       )}
     </div>
   );
-}
+};
+
+export default ScrollToTop;

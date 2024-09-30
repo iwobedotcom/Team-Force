@@ -1,5 +1,10 @@
 import { ButtonLink } from '@/components';
 
+/**
+ * Renders a contact form section with input fields for name, email, phone, and message, as well as a button to submit the form.
+ * The section is positioned absolutely at the top of the page with a transparent background.
+ * The form is centered within the section and has a rounded gradient background.
+ */
 const Contact = () => {
   return (
     <section className="container absolute top-[-230px] w-full z-50 bg-transparent">

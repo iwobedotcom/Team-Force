@@ -1,8 +1,8 @@
-import useMediaQueries from '@/hooks/useMediaQueries';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ButtonLink from '../common/buttons/button-link';
-import { menuData } from './menuData';
+import { headerNavlinks } from '../../config/headerNavlinks';
+import { useMediaQueries } from '@/hooks/useMediaQueries';
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);
@@ -119,7 +119,7 @@ const Header = () => {
                   }`}
                 >
                   <ul className="block lg:flex lg:space-x-8">
-                    {menuData.map((menuItem) => (
+                    {headerNavlinks.map((menuItem) => (
                       <li key={menuItem.id} className="group relative">
                         <Link
                           to={menuItem.path}

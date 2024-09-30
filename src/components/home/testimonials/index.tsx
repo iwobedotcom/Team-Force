@@ -2,62 +2,16 @@ import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import { TestimonialsProps } from '@/types';
 import TestimonialCard from './card';
 import { useState } from 'react';
+import { testimonials } from '@/config/testimonials';
 
-const testimonials: TestimonialsProps[] = [
-  {
-    id: 1,
-    name: 'Lana Rey',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 4,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  },
-  {
-    id: 2,
-    name: 'J. McGhee',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 5,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  },
-  {
-    id: 3,
-    name: 'Michael H.',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 4,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  },
-  {
-    id: 4,
-    name: 'John Doe',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 4,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  },
-  {
-    id: 5,
-    name: 'Jane Doe',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 4,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  },
-  {
-    id: 6,
-    name: 'Steve Doe',
-    avatar: '',
-    title: 'Founder & Leader',
-    stars: 4,
-    message: 'Is it possible to Love your credit card processor? with TeamForce, yes!'
-  }
-];
-
-const Testimonials: React.FC = () => {
+/**
+ * Renders the Testimonials component, which displays a carousel of testimonials with a custom heading and section.
+ * The carousel is implemented using the `keen-slider` library, with options for different breakpoints.
+ * The testimonials data is imported from the `@/config/testimonials` module.
+ */
+const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
