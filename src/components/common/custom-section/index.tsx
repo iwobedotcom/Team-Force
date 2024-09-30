@@ -1,9 +1,9 @@
-import { CustomSectionProps } from '@/types';
+import { CustomSectionProp } from '@/types';
 
 /**
  * A custom section component that renders a section with a wavy divider at the top.
  *
- * @param {CustomSectionProps} props - The props for the custom section component.
+ * @param {CustomSectionProp} props - The props for the custom section component.
  * @param {React.ReactNode} props.children - The content to be rendered inside the section.
  * @param {string} [props.id] - The ID of the section.
  * @param {string} [props.className] - Additional CSS classes to apply to the section.
@@ -17,7 +17,7 @@ const CustomSection = ({
   className,
   container = true,
   waveColor
-}: CustomSectionProps) => {
+}: CustomSectionProp) => {
   return (
     <section
       id={id}
