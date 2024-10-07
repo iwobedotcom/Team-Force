@@ -35,9 +35,9 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="container dark:bg-gray-dark relative z-10 overflow-hidden bg-gradient pt-[140px]"
+      className="dark:bg-gray-dark relative z-10 overflow-hidden bg-gradient pt-[140px]"
     >
-      <div className="grid md:grid-cols-2 gap-1 md:gap-1 xl:gap-20">
+      <div className="container grid md:grid-cols-2 gap-1 md:gap-1 xl:gap-20">
         <div>
           <h1
             className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-none pb-7"

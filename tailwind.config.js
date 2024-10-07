@@ -4,13 +4,8 @@ export default {
   darkMode: 'class',
   theme: {
     container: {
-      padding: {
-        DEFAULT: '1rem',
-        sm: '3rem',
-        lg: '6rem',
-        xl: '8rem',
-        '2xl': '10rem'
-      }
+      center: true,
+      padding: '1rem'
     },
     screens: {
       xs: '480px',

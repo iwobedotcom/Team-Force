@@ -28,7 +28,7 @@ const PaymentMethods = () => {
         <img
           src="/images/team-force-network.png"
           alt="offerings"
-          className="object-cover w-full h-auto max-w-full image-zoom"
+          className="object-cover w-full h-auto image-zoom"
           data-aos="fade-up"
         />
       </div>

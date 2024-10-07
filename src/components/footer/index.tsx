@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="container relative z-10 bg-body-color-dark dark:bg-gray-dark pt-72"
+      className="relative z-10 bg-body-color-dark dark:bg-gray-dark pt-72"
       data-aos="fade-up"
     >
       <div className="container mx-auto px-4">
