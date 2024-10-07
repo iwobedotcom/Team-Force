@@ -5,7 +5,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '1rem'
+      padding: {
+        DEFAULT: '1rem', // Default padding
+        sm: '2rem', // Padding for small screens
+        lg: '4rem', // Padding for large screens
+        xl: '5rem' // Padding for extra-large screens
+      }
     },
     screens: {
       xs: '480px',

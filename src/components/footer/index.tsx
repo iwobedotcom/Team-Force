@@ -54,10 +54,10 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="relative z-10 bg-body-color-dark dark:bg-gray-dark pt-72"
+      className="container relative z-10 bg-body-color-dark dark:bg-gray-dark pt-72"
       data-aos="fade-up"
     >
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-4/12 mb-12 lg:mb-16">
             <div className="max-w-[360px]">
