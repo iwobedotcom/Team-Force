@@ -2,7 +2,7 @@ import ButtonLink from '@/components/common/buttons/button-link';
 import { ContourLines, SphericalLines, TwilightStar } from '@/components/icons';
 import { clients } from '@/config/clients';
 import { useMediaQueries } from '@/hooks/useMediaQueries';
-import { AvatarProp } from '@/types';
+import { AvatarProp, ButtonSize } from '@/types';
 
 /**
  * The `Hero` component represents the main hero section of the homepage. It includes a title, a call-to-action button, a list of client avatars, and various decorative elements.
@@ -50,7 +50,7 @@ const Hero = () => {
               <ButtonLink
                 label="Get Started For Free"
                 variant="button"
-                size={isMobile ? 'medium' : 'large'}
+                size={isMobile ? ButtonSize.Medium : ButtonSize.Large}
                 to="#"
               />
             </div>

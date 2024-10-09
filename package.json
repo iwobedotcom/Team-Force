@@ -11,6 +11,7 @@
     "generate:sitemap": "node generate.sitemap.js"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@iconify/react": "^5.0.2",
     "aos": "^2.3.4",
     "keen-slider": "^6.8.6",

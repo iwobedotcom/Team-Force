@@ -2,6 +2,7 @@ import ButtonLink from '@/components/common/buttons/button-link';
 import CustomHeading from '@/components/common/custom-heading';
 import CustomSection from '@/components/common/custom-section';
 import { useMediaQueries } from '@/hooks/useMediaQueries';
+import { ButtonSize } from '@/types';
 
 /**
  * Renders the call-to-action section of the home page.
@@ -67,7 +68,7 @@ const CallToAction = () => {
               <ButtonLink
                 label="Open An Account in Minutes"
                 to="#"
-                size={isMobile ? 'small' : 'medium'}
+                size={isMobile ? ButtonSize.Small : ButtonSize.Medium}
                 variant="button"
               />
 

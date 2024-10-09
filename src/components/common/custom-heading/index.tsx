@@ -9,10 +9,18 @@ import { CustomHeadingProp } from '@/types';
  * @param paragraph - An optional paragraph to be displayed below the title.
  * @param center - Whether to center the heading and paragraph, defaults to true.
  * @param className - An optional CSS class to be applied to the heading.
+ * @param paragraphColor - The color of the paragraph text, defaults to 'text-body-color'.
  * @returns A React component that renders the custom heading.
  */
 
-const CustomHeading = ({ title, size, paragraph, center = true, className }: CustomHeadingProp) => {
+const CustomHeading = ({
+  title,
+  size,
+  paragraph,
+  center = true,
+  className,
+  paragraphColor = 'text-body-color'
+}: CustomHeadingProp) => {
   const { isMobile } = useMediaQueries();
   const sizeClasses = {
     small: 'text-xl sm:text-3xl',
@@ -33,7 +41,7 @@ const CustomHeading = ({ title, size, paragraph, center = true, className }: Cus
       </h1>
       {paragraph && (
         <p
-          className={`mb-4 max-w-3xl text-base font-medium leading-relaxed sm:leading-relaxed sm:text-lg text-body-color ${isMobile ? 'mr-auto' : ''} sm:leading-relaxed`}
+          className={`mb-4 max-w-3xl text-base font-medium leading-relaxed sm:leading-relaxed sm:text-lg ${paragraphColor} ${isMobile ? 'mr-auto' : ''}`}
           data-aos="fade-up"
           data-aos-delay="200"
         >

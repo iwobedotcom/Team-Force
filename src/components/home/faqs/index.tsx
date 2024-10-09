@@ -3,6 +3,7 @@ import { useState } from 'react';
 import FAQItem from './faq-item';
 import { useMediaQueries } from '@/hooks/useMediaQueries';
 import { faqs } from '@/config/faqs';
+import { ButtonSize } from '@/types';
 
 /**
  * Renders the FAQs (Frequently Asked Questions) section of the home page.
@@ -43,7 +44,7 @@ const FAQs = () => {
                 <ButtonLink
                   label="Get in Touch"
                   to="#"
-                  size={isMobile ? 'small' : 'medium'}
+                  size={isMobile ? ButtonSize.Small : ButtonSize.Medium}
                   variant="button"
                 />
               </div>

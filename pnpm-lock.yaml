@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@formspree/react':
+        specifier: ^2.5.1
+        version: 2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@iconify/react':
         specifier: ^5.0.2
         version: 5.0.2(react@18.3.1)
@@ -381,6 +384,15 @@ packages:
     resolution: {integrity: sha512-vH9PiIMMwvhCx31Af3HiGzsVNULDbyVkHXwlemn/B0TFj/00ho3y55efXrUZTfQipxoHC5u4xq6zblww1zm1Ig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@formspree/core@3.0.1':
+    resolution: {integrity: sha512-jGNgrEtL8mx8k1kkmeNfyeoP1a+H2kci8TMG7CT3R5k3ssqr0Sl1j10SIKo74CFZVewMW4JjMYwcunWUPfutSQ==}
+
+  '@formspree/react@2.5.1':
+    resolution: {integrity: sha512-Yhxyn32m3zH63i0DNpnBq55zargDlbihqC0wlK18dqU7GOUqJXKY+WywLXuTRGfqo79/hT+Qx6eFS6M0J6eh0A==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
     engines: {node: '>=12.22'}
@@ -630,6 +642,16 @@ packages:
     resolution: {integrity: sha512-j8pPKp53/lq9lMXN57S8cFz0MynJk8OWNuUnXct/9KCpKU7DgU3bYMJhwWmcqC0UU29p8Lr0/7KEVcaM6bf47Q==}
     cpu: [x64]
     os: [win32]
+
+  '@stripe/react-stripe-js@1.16.5':
+    resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
+    peerDependencies:
+      '@stripe/stripe-js': ^1.44.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@stripe/stripe-js@1.54.2':
+    resolution: {integrity: sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==}
 
   '@swc/core-darwin-arm64@1.7.28':
     resolution: {integrity: sha512-BNkj6enHo2pdzOpCtQGKZbXT2A/qWIr0CVtbTM4WkJ3MCK/glbFsyO6X59p1r8+gfaZG4bWYnTTu+RuUAcsL5g==}
@@ -1535,6 +1557,9 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prop-types@15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -1554,6 +1579,9 @@ packages:
     resolution: {integrity: sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
+
+  react-is@16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -2075,6 +2103,18 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
+  '@formspree/core@3.0.1':
+    dependencies:
+      '@stripe/stripe-js': 1.54.2
+
+  '@formspree/react@2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@formspree/core': 3.0.1
+      '@stripe/react-stripe-js': 1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@stripe/stripe-js': 1.54.2
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.3.0': {}
@@ -2255,6 +2295,15 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.22.4':
     optional: true
+
+  '@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@stripe/stripe-js': 1.54.2
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@stripe/stripe-js@1.54.2': {}
 
   '@swc/core-darwin-arm64@1.7.28':
     optional: true
@@ -3129,6 +3178,12 @@ snapshots:
 
   prettier@3.3.3: {}
 
+  prop-types@15.8.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+
   punycode@2.3.1: {}
 
   queue-microtask@1.2.3: {}
@@ -3147,6 +3202,8 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
+
+  react-is@16.13.1: {}
 
   react-refresh@0.14.2: {}
 

@@ -21,13 +21,15 @@ export type MetadataProp = {
 };
 
 export type ButtonLinkProp = {
-  to: string;
-  label: string;
+  to?: string;
+  label: string | ReactElement;
   variant?: 'button' | 'link';
   size?: 'small' | 'medium' | 'large';
   icon?: ReactElement | null;
   color?: string;
   alt?: boolean;
+  onClick?: () => void;
+  disabled?: boolean;
 };
 
 export type CustomHeadingProp = {
@@ -36,6 +38,7 @@ export type CustomHeadingProp = {
   className?: string;
   paragraph?: string;
   center?: boolean;
+  paragraphColor?: string;
 };
 
 export type CustomSectionProp = PropsWithChildren<{

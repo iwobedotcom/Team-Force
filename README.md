@@ -129,6 +129,7 @@ The sitemap generator crawls your built site and creates a `sitemap.xml` file in
 - **React Helmet Async** (v2.0.5): Document head manager for React
 - **ESLint** (v9.9.0) & **Prettier** (via eslint-config-prettier): Code quality and formatting
 - **Sitemap** (v8.0.0): Sitemap generator
+- **FormSpree**: Simple HTML forms
 
 For a complete list of dependencies and their versions, please refer to the `package.json` file.
 

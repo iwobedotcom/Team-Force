@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ButtonLink from '../common/buttons/button-link';
 import { headerNavlinks } from '../../config/headerNavlinks';
 import { useMediaQueries } from '@/hooks/useMediaQueries';
+import { ButtonSize } from '@/types';
 
 /**
  * The `Header` component represents the header section of the application.
@@ -91,14 +92,14 @@ const Header = () => {
       <ButtonLink
         label="Login"
         to="#"
-        size="medium"
+        size={ButtonSize.Medium}
         variant="link"
         color={sticky ? (isMobile ? 'text-white' : 'text-black') : 'text-white'}
       />
       <ButtonLink
         label="Sign Up"
         to="#"
-        size="medium"
+        size={ButtonSize.Medium}
         variant="button"
         color={sticky ? (isMobile ? 'text-white' : 'text-black') : 'text-white'}
       />
