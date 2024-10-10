@@ -23,6 +23,7 @@ const Contact = () => {
   const { isMobile } = useMediaQueries();
   const [state, handleSubmit] = useForm('mldervay');
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showErrors, setShowErrors] = useState(false);
 
   useEffect(() => {
     if (state.succeeded) {
@@ -35,10 +36,19 @@ const Contact = () => {
     }
   }, [state.succeeded]);
 
+  useEffect(() => {
+    if (state.errors) {
+      setShowErrors(true);
+    }
+  }, [state.errors]);
+
+  const handleDismiss = () => {
+    setShowErrors(false);
+  };
+
   if (showSuccess) {
     return <FormspreeSuccess />;
   }
-
   return (
     <section className="absolute top-[-230px] w-full z-50 bg-transparent">
       <div className="container">
@@ -123,12 +133,13 @@ const Contact = () => {
         </div>
       </div>
 
-      {state.errors && (
+      {showErrors && state.errors && (
         <ManageNotifications
           emailStatus={state.errors
-            ?.getFormErrors()
+            .getFormErrors()
             .map((error) => error.message)
             .join(', ')}
+          onDismiss={handleDismiss}
         />
       )}
     </section>
